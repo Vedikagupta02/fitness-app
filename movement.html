@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        #entries-list::-webkit-scrollbar { width: 4px; }
+        #entries-list::-webkit-scrollbar-track { background: transparent; }
+        #entries-list::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 20px; }
+    </style>
+    <title>Movement Tracker</title>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 selection:bg-emerald-100 selection:text-emerald-900">
+    <div class="bg-white p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 w-full max-w-md transition-all">
+        <a href="index.html" class="inline-flex items-center text-sm font-medium text-emerald-600 hover:text-emerald-700 mb-4 transition-colors">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back to Home
+        </a>
+        <div class="flex items-center justify-center mb-6">
+            <div class="bg-emerald-50 p-3 rounded-full mr-3">
+                <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <h1 class="text-2xl font-semibold text-gray-800 tracking-tight">Movement Tracker</h1>
+        </div>
+        
+        <div id="form-container" class="space-y-5 mb-8">
+            <div>
+                <label for="activity" class="block text-sm font-medium text-gray-600 mb-1.5">Activity</label>
+                <input type="text" id="activity" placeholder="e.g., Morning Run" 
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all text-gray-800 placeholder-gray-400" />
+            </div>
+
+            <div>
+                <label for="duration" class="block text-sm font-medium text-gray-600 mb-1.5">Duration (minutes)</label>
+                <input type="number" id="duration" placeholder="e.g., 30" 
+                    class="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:bg-white transition-all text-gray-800 placeholder-gray-400" />
+            </div>
+
+            <button class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-4 rounded-xl shadow-sm hover:shadow-md transition-all active:scale-[0.98] mt-2 flex justify-center items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                Add Activity
+            </button>
+        </div>
+
+        <div id="entries-container">
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-4 pb-3 border-b border-gray-100 flex justify-between items-center">
+                <span>Recent Entries</span>
+                <span id="entry-count" class="bg-gray-100 text-gray-600 py-0.5 px-2 rounded-full text-xs">0</span>
+            </h2>
+            <ul id="entries-list" class="space-y-3 max-h-60 overflow-y-auto pr-2">
+                <li class="text-gray-400 text-sm text-center py-6 border-2 border-dashed border-gray-100 rounded-xl" id="empty-state">No activities yet. Start tracking!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="movement.js"></script>
+</body>
+</html>
