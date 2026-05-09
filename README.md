@@ -1,4 +1,4 @@
-# Fitness Hub 🏋️‍♀️🍎
+# Fitness Hub 
 
 A modern, minimal, and clean web application for tracking your daily physical activities and calorie intake. 
 
